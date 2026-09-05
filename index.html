@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noble Diagnostic Lab | Home Sample Collection</title>
+<style>
+:root{--primary:#0b6bcb;--dark:#12324a;--light:#f4f8fc;--green:#159447}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:#173044}
+header{background:linear-gradient(135deg,#0759a8,#0b84dc);color:white;padding:28px 18px}
+.container{max-width:1050px;margin:auto}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+h1{margin:0 0 7px;font-size:30px}.tag{margin:0;opacity:.92}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;border:0;border-radius:10px;padding:12px 17px;font-weight:700;cursor:pointer}
+.call{background:white;color:#0759a8}.wa{background:#19a65b;color:white}
+.hero{padding:26px 18px}.hero-card{background:white;border-radius:18px;padding:24px;box-shadow:0 7px 25px #17304414}
+.hero h2{margin-top:0;font-size:25px}.hero p{line-height:1.55}
+.badges{display:flex;gap:10px;flex-wrap:wrap}.badge{background:#eaf4ff;padding:9px 12px;border-radius:20px;font-size:14px}
+section{padding:10px 18px 30px}.grid{display:grid;grid-template-columns:1.25fr .9fr;gap:22px}
+.card{background:white;border-radius:16px;padding:20px;box-shadow:0 5px 20px #17304412}
+.card h3{margin-top:0}.tests{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.test{border:1px solid #dce7f0;border-radius:11px;padding:11px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.test label{display:flex;gap:9px;align-items:center;font-size:14px}.price{font-weight:700;white-space:nowrap}
+input,textarea,select{width:100%;padding:12px;border:1px solid #cbd9e5;border-radius:9px;font-size:15px;margin-top:6px;margin-bottom:13px}
+textarea{min-height:90px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.total{font-size:21px;font-weight:800;text-align:right;padding:14px 0}.submit{width:100%;background:var(--green);color:white;font-size:16px}
+.small{font-size:12px;color:#64798a;line-height:1.45}
+.contact p{margin:8px 0}.contact strong{color:var(--dark)}
+footer{background:#102c40;color:#dceaf3;padding:22px 18px;text-align:center;font-size:14px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.tests{grid-template-columns:1fr}.row{grid-template-columns:1fr}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container top">
+    <div>
+      <h1>Noble Diagnostic Lab</h1>
+      <p class="tag">Reliable Diagnostic Testing • Home Sample Collection</p>
+    </div>
+    <div class="actions">
+      <a class="btn call" href="tel:+919068517786">Call 90685 17786</a>
+      <a class="btn call" href="tel:+919991222564">Call 99912 22564</a>
+      <a class="btn wa" href="https://wa.me/919068517786" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <h2>Book Your Blood Test From Home</h2>
+      <p>Select the tests you need, enter your contact details and address, and send a home sample collection request to Noble Diagnostic Lab.</p>
+      <div class="badges">
+        <span class="badge">✓ Home Sample Collection</span>
+        <span class="badge">✓ Multiple Tests in One Booking</span>
+        <span class="badge">✓ Kaithal • Khurana Road</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+<div class="container grid">
+  <div class="card">
+    <h3>Select Tests</h3>
+    <div class="tests" id="tests"></div>
+    <div class="total">Total: ₹<span id="total">0</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Home Collection Details</h3>
+    <form id="bookingForm">
+      <label>Patient Name<input id="name" required placeholder="Enter patient name"></label>
+      <div class="row">
+        <label>Mobile Number<input id="mobile" required type="tel" pattern="[0-9]{10}" placeholder="10-digit mobile"></label>
+        <label>Preferred Date<input id="date" required type="date"></label>
+      </div>
+      <label>Preferred Time
+        <select id="time" required>
+          <option value="">Select time</option><option>7:00 AM - 9:00 AM</option>
+          <option>9:00 AM - 11:00 AM</option><option>11:00 AM - 1:00 PM</option>
+          <option>1:00 PM - 3:00 PM</option><option>3:00 PM - 5:00 PM</option>
+          <option>5:00 PM - 7:00 PM</option>
+        </select>
+      </label>
+      <label>Full Address<textarea id="address" required placeholder="House/Shop no., street, area, Kaithal"></textarea></label>
+      <label>Additional Note (optional)<textarea id="note" placeholder="Any useful information"></textarea></label>
+      <button class="btn submit" type="submit">Send Home Collection Request</button>
+      <p class="small">This demo sends the booking request through WhatsApp. For a production site, connect the form to a secure database/admin panel and add an appropriate privacy notice.</p>
+    </form>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="card contact">
+    <h3>Contact & Lab Information</h3>
+    <p><strong>Lab:</strong> Noble Diagnostic Lab</p>
+    <p><strong>Contact Person:</strong> DMLT Alijan</p>
+    <p><strong>Phone:</strong> 90685 17786 • 99912 22564</p>
+    <p><strong>Location:</strong> Khurana Road, Kaithal</p>
+  </div>
+</div>
+</section>
+
+<footer>Noble Diagnostic Lab • Khurana Road, Kaithal</footer>
+
+<script>
+const tests = [
+["CBC",150],["Widal Slide",100],["ESR",100],["Blood Sugar",50],["Blood Group",100],
+["Uric Acid",100],["Cholesterol",100],["Triglycerides",150],["SGOT",100],["SGPT",100],
+["Blood Urea",100],["S. Bilirubin",100],["Creatinine",150],["Calcium",100],
+["Lipid Profile",450],["Liver Function Test",450],["Kidney Function Test",450],["CRP",200],
+["CRP(Q)",400],["RA Factor",200],["RA Factor (Q)",600],["Widal Card",200],["HBA1C",450],
+["HCV",350],["HIV",350],["HBsAg",150],["S. Amylase",400],["Urine Routine",100],
+["Urine Culture",450],["Testosterone - Total",550],["Serum IgM Total",600]
+];
+
+const testsBox=document.getElementById("tests");
+tests.forEach(([name,price],i)=>{
+  const div=document.createElement("div"); div.className="test";
+  div.innerHTML=`<label><input type="checkbox" data-i="${i}"> ${name}</label><span class="price">₹${price}</span>`;
+  testsBox.appendChild(div);
+});
+function selected(){
+  return [...document.querySelectorAll('input[type="checkbox"][data-i]:checked')].map(x=>tests[+x.dataset.i]);
+}
+function updateTotal(){document.getElementById("total").textContent=selected().reduce((s,x)=>s+x[1],0);}
+document.querySelectorAll('input[type="checkbox"]').forEach(x=>x.addEventListener("change",updateTotal));
+
+document.getElementById("date").min=new Date().toISOString().split("T")[0];
+
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const chosen=selected();
+  if(!chosen.length){alert("Please select at least one test.");return;}
+  const name=document.getElementById("name").value.trim();
+  const mobile=document.getElementById("mobile").value.trim();
+  const date=document.getElementById("date").value;
+  const time=document.getElementById("time").value;
+  const address=document.getElementById("address").value.trim();
+  const note=document.getElementById("note").value.trim();
+  const total=chosen.reduce((s,x)=>s+x[1],0);
+  const testText=chosen.map(x=>`${x[0]} - ₹${x[1]}`).join(", ");
+  const msg=`*Noble Diagnostic Lab - Home Sample Collection Request*%0A%0APatient: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0AAddress: ${encodeURIComponent(address)}%0ATests: ${encodeURIComponent(testText)}%0ATotal: ₹${total}%0ANote: ${encodeURIComponent(note||"None")}`;
+  window.open(`https://wa.me/919068517786?text=${msg}`,"_blank");
+});
+</script>
+</body>
+</html>
